@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Список категорій{% endblock %}
+
+{% block body %}
+<h1> {{ message }} </h1>
+<div style="display:flex;flex-wrap:wrap;flex-direction:row;gap:100px;">
+<table><caption><h2>Список категорій</h2></caption>
+    <thead>
+        <tr>
+            <th>Назва</th>
+			<th>Опис категорії</th>
+			<th>Операції над категорією</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for cat in category %}
+            <tr>
+                <td>{{ cat.name }}</td>
+				<td>{{ cat.description }}</td>
+				<td><a href="/category-edit">Редагувати</a><a href="/category-del">Видалити</a</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<a href="/category-new">Створити нову категорію</a>
+</div>
+{{ knp_pagination_render(category) }}
+{% endblock %}

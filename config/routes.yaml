@@ -1,0 +1,33 @@
+/:
+    path: /
+    controller: App\Controller\DefaultController::index
+book:
+    path: /book
+    controller: App\Controller\BookController::index
+book_list:
+    path: /book-list
+    controller: App\Controller\BookController::list
+book_new:
+    path: /book-new
+    controller: App\Controller\BookController::new
+book_edit:
+    path: /book-edit
+    controller: App\Controller\BookController::edit
+book_del:
+    path: /book-del
+    controller: App\Controller\BookController::delete
+category:
+    path: /category
+    controller: App\Controller\CategoryController::index
+category_list:
+    path: /category-list
+    controller: App\Controller\CategoryController::list
+category_new:
+    path: /category-new
+    controller: App\Controller\CategoryController::newCategory
+category_edit:
+    path: /category-edit
+    controller: App\Controller\CategoryController::editCategory
+category_del:
+    path: /category-del
+    controller: App\Controller\CategoryController::deleteCategory

@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Список книг{% endblock %}
+
+{% block body %}
+<h1> {{ message }} </h1>
+<div style="display:flex;flex-wrap:wrap;flex-direction:row;gap:100px;">
+<table><caption><h2>Список книг</h2></caption>
+    <thead>
+        <tr>
+            <th>Назва</th>
+            <th>Категорія</th>
+            <th>Теги</th>
+			<th>Операції над книгою</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for book in books %}
+            <tr>
+                <td>{{ book.title }}</td>
+                <td>{{ book.category.name }}</td>
+                <td>{{ book.tags|join(', ') }}</td>
+				<td><a href="/book-edit">Редагувати</a><a href="/book-del">Видалити</a</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<a href="/book-new">Створити нову книгу</a>
+</div>
+{{ knp_pagination_render(books) }}
+{% endblock %}
